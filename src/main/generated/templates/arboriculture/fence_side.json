@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "particle": "forestry:blocks/wood/planks/$0$",
+    "texture": "forestry:blocks/wood/planks/$0$"
+  }
+}

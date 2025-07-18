@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "side": "forestry:blocks/wood/bark/$0$",
+    "end": "forestry:blocks/wood/heart/$0$"
+  }
+}

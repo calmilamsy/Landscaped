@@ -1,0 +1,9 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+	"particle": "forestry:blocks/wood/planks/$0$",
+    "side": "forestry:blocks/wood/planks/$0$",
+    "top": "forestry:blocks/wood/planks/$0$",
+    "bottom": "forestry:blocks/wood/planks/$0$"
+  }
+}

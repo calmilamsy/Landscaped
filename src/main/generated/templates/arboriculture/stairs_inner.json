@@ -1,0 +1,9 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+  	"particle": "forestry:blocks/wood/planks/$0$",
+    "side": "forestry:blocks/wood/planks/$0$",
+    "top": "forestry:blocks/wood/planks/$0$",
+    "bottom": "forestry:blocks/wood/planks/$0$"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.glasslauncher.mods.landscaped.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ChunkGenMixin"
+  ],
+  "server": [
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
