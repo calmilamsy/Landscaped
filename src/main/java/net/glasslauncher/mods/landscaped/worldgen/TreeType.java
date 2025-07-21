@@ -30,8 +30,9 @@ public enum TreeType {
     MAHOGANY(LandscapedBlocks.Wood.mahogany, LandscapedBlocks.Leaves.mahogany, LandscapedBlocks.Sapling.mahogany, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 6, (random, layer) -> 2 -layer / 2, r -> 3), () -> List.of(Biome.FOREST)),
     MAPLE(LandscapedBlocks.Wood.maple, LandscapedBlocks.Leaves.maple, LandscapedBlocks.Sapling.maple, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 5, (random, layer) -> 2 -layer / 2, r -> 3), () -> List.of(Biome.FOREST)),
     PADAUK(LandscapedBlocks.Wood.padauk, LandscapedBlocks.Leaves.padauk, LandscapedBlocks.Sapling.padauk, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 5, (random, layer) -> 2 -layer / 2, r -> 3), () -> List.of(Biome.FOREST)),
-    PALM(LandscapedBlocks.Wood.palm, LandscapedBlocks.Leaves.palm, LandscapedBlocks.Sapling.palm, (t, l) -> new PalmGen(t, l, r -> r.nextInt(4) + 6), () -> List.of(Biome.FOREST)),
-    PAPAYA(LandscapedBlocks.Wood.papaya, LandscapedBlocks.Leaves.papaya, LandscapedBlocks.Sapling.papaya, (t, l) -> new PalmGen(t, l, r -> r.nextInt(3) + 4), () -> List.of(Biome.FOREST)),
+    PALM(LandscapedBlocks.Wood.palm, LandscapedBlocks.Leaves.palm, LandscapedBlocks.Sapling.palm, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 5, (random, layer) -> 3 + layer, r -> 2), () -> List.of(Biome.FOREST)),
+    PAPAYA(LandscapedBlocks.Wood.palm, LandscapedBlocks.Leaves.palm, LandscapedBlocks.Sapling.palm, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 5, (random, layer) -> layer == 0 ? 1 : layer == -1 ? 2 : 1, r -> 2), () -> List.of(Biome.FOREST)),
+
     PINE(LandscapedBlocks.Wood.larch, LandscapedBlocks.Leaves.larch, LandscapedBlocks.Sapling.larch, (t, l) -> new ConifersGen(t, l, r -> 6 + r.nextInt(2), r -> 2, r -> r.nextInt(2) + 1, r -> r.nextInt(3), r -> 0, r -> 0, r -> 1, r -> 1), () -> List.of(Biome.TAIGA)),
     PLUM(LandscapedBlocks.Wood.plum, LandscapedBlocks.Leaves.plum, LandscapedBlocks.Sapling.plum, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 4, (random, layer) -> 1 - layer / 2, r -> 3), () -> List.of(Biome.FOREST)),
     POPLAR(LandscapedBlocks.Wood.poplar, LandscapedBlocks.Leaves.poplar, LandscapedBlocks.Sapling.poplar, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(4) + 9, (random, layer) -> 1, r -> 4 + r.nextInt(3)), () -> List.of(Biome.FOREST)),
