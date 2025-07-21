@@ -1,9 +1,11 @@
 package net.glasslauncher.mods.landscaped.worldgen;
 
 import lombok.RequiredArgsConstructor;
+import net.glasslauncher.mods.landscaped.blocks.LeavesBlockTemplate;
 import net.glasslauncher.mods.landscaped.util.RandomIntProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.Feature;
 import net.modificationstation.stationapi.api.registry.BlockRegistry;
@@ -89,6 +91,8 @@ public class WillowGen extends Feature {
                 }
             }
         }
+
+        TreeGenHelpers.updateGeneratedLeaves(world, x, y + treeHeight, z);
 
         return true;
     }

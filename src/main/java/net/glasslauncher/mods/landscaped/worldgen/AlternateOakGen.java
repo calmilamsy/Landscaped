@@ -78,6 +78,8 @@ public class AlternateOakGen extends Feature {
             }
         }
 
+        TreeGenHelpers.updateGeneratedLeaves(world, x, y + treeHeight, z);
+
         return true;
     }
 }

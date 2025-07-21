@@ -1,6 +1,7 @@
 package net.glasslauncher.mods.landscaped.worldgen;
 
 import lombok.RequiredArgsConstructor;
+import net.glasslauncher.mods.landscaped.blocks.LeavesBlockTemplate;
 import net.glasslauncher.mods.landscaped.util.RandomIntProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -116,6 +117,8 @@ public class ConifersGen extends Feature {
                 currentLeafRadius++;
             }
         }
+
+        TreeGenHelpers.updateGeneratedLeaves(world, x, y + treeHeight, z);
 
         return true;
     }
