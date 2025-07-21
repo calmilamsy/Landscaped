@@ -27,6 +27,13 @@ public class LeavesTextureListener {
         int palm = terrain.addTexture(NAMESPACE.id("block/leaves/palm.fancy")).index;
         int willow = terrain.addTexture(NAMESPACE.id("block/leaves/willow.fancy")).index;
 
+        int fastConifers = terrain.addTexture(NAMESPACE.id("block/leaves/conifers.plain")).index;
+        int fastDeciduous = terrain.addTexture(NAMESPACE.id("block/leaves/deciduous.plain")).index;
+        int fastJungle = terrain.addTexture(NAMESPACE.id("block/leaves/jungle.plain")).index;
+        int fastMaple = terrain.addTexture(NAMESPACE.id("block/leaves/maple.plain")).index;
+        int fastPalm = terrain.addTexture(NAMESPACE.id("block/leaves/palm.plain")).index;
+        int fastWillow = terrain.addTexture(NAMESPACE.id("block/leaves/willow.plain")).index;
+
         LandscapedBlocks.Leaves.acacia.textureId = deciduous;
         LandscapedBlocks.Leaves.balsa.textureId = deciduous;
         LandscapedBlocks.Leaves.baobab.textureId = deciduous;
@@ -56,6 +63,36 @@ public class LeavesTextureListener {
         LandscapedBlocks.Leaves.wenge.textureId = deciduous;
         LandscapedBlocks.Leaves.willow.textureId = willow;
         LandscapedBlocks.Leaves.zebrawood.textureId = jungle;
+
+        LandscapedBlocks.Leaves.acacia.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.balsa.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.baobab.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.cherry.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.chestnut.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.citrus.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.cocobolo.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.ebony.fastTextureId = fastJungle;
+        LandscapedBlocks.Leaves.giganteum.fastTextureId = fastConifers;
+        LandscapedBlocks.Leaves.greenheart.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.ipe.fastTextureId = fastJungle;
+        LandscapedBlocks.Leaves.kapok.fastTextureId = fastJungle;
+        LandscapedBlocks.Leaves.larch.fastTextureId = fastConifers;
+        LandscapedBlocks.Leaves.lime.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.mahoe.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.mahogany.fastTextureId = fastJungle;
+        LandscapedBlocks.Leaves.maple.fastTextureId = fastMaple;
+        LandscapedBlocks.Leaves.padauk.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.palm.fastTextureId = fastPalm;
+        LandscapedBlocks.Leaves.papaya.fastTextureId = fastPalm;
+        LandscapedBlocks.Leaves.pine.fastTextureId = fastConifers;
+        LandscapedBlocks.Leaves.plum.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.poplar.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.sequoia.fastTextureId = fastConifers;
+        LandscapedBlocks.Leaves.teak.fastTextureId = fastJungle;
+        LandscapedBlocks.Leaves.walnut.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.wenge.fastTextureId = fastDeciduous;
+        LandscapedBlocks.Leaves.willow.fastTextureId = fastWillow;
+        LandscapedBlocks.Leaves.zebrawood.fastTextureId = fastJungle;
 
         LandscapedBlocks.Sapling.acacia.textureId = terrain.addTexture(NAMESPACE.id("block/sapling/acacia")).index;
         LandscapedBlocks.Sapling.balsa.textureId = terrain.addTexture(NAMESPACE.id("block/sapling/balsa")).index;
