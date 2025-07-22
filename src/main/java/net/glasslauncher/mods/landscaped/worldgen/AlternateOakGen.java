@@ -1,7 +1,6 @@
 package net.glasslauncher.mods.landscaped.worldgen;
 
 import lombok.RequiredArgsConstructor;
-import net.glasslauncher.mods.gcapi3.impl.SeptFunction;
 import net.glasslauncher.mods.landscaped.util.RandomIntProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -11,10 +10,11 @@ import net.modificationstation.stationapi.api.registry.BlockRegistry;
 
 import java.util.*;
 import java.util.function.BiFunction;
-import java.util.function.Function;
+
+import static net.glasslauncher.mods.landscaped.worldgen.TreeGenHelpers.DEFAULT_SOILS;
 
 @RequiredArgsConstructor
-public class AlternateOakGen extends Feature {
+public class AlternateOakGen extends Feature implements LandscapedTreeFeature {
     protected final Block trunk;
     protected final Block leaves;
     protected final RandomIntProvider treeHeightGetter; // random.nextInt(3) + 4
@@ -28,7 +28,7 @@ public class AlternateOakGen extends Feature {
         this.treeHeightGetter = treeHeightGetter;
         this.leafRadiusShrinkGetter = leafRadiusShrinkGetter;
         this.leafLayerCountGetter = leafLayerCountGetter;
-        soils = Map.of(Block.DIRT, (w, r, x, y, z) -> {}, Block.GRASS_BLOCK, (w, r, x, y, z) -> w.setBlockWithoutNotifyingNeighbors(x, y, z, Block.DIRT.id));
+        soils = DEFAULT_SOILS;
     }
 
     @Override
@@ -39,7 +39,8 @@ public class AlternateOakGen extends Feature {
         }
 
         int supportingBlockId = world.getBlockId(x, y - 1, z);
-        if (!(supportingBlockId == Block.GRASS_BLOCK.id || supportingBlockId == Block.DIRT.id) || y >= world.getTopY() - treeHeight - 1) {
+        CustomSoilPlacer soilPlacer = soils.get(BlockRegistry.INSTANCE.getOrThrow(supportingBlockId));
+        if (soilPlacer == null || y >= world.getTopY() - treeHeight - 1) {
             return false;
         }
 
@@ -54,7 +55,7 @@ public class AlternateOakGen extends Feature {
             }
         }
 
-        world.setBlockWithoutNotifyingNeighbors(x, y - 1, z, Block.DIRT.id);
+        soilPlacer.placeSoil(world, random, x, y, z);
 
         for(int relativeY = 0; relativeY < treeHeight; ++relativeY) {
             if (TreeGenHelpers.isReplaceableByLogs(world.getBlockState(x, y + relativeY, z))) {
@@ -81,5 +82,10 @@ public class AlternateOakGen extends Feature {
         TreeGenHelpers.updateGeneratedLeaves(world, x, y + treeHeight, z);
 
         return true;
+    }
+
+    @Override
+    public Set<Block> getSoils() {
+        return soils.keySet();
     }
 }

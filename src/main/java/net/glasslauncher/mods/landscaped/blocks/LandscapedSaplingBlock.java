@@ -36,4 +36,9 @@ public class LandscapedSaplingBlock extends TemplateSaplingBlock {
             world.setBlockWithoutNotifyingNeighbors(x, y, z, id);
         }
     }
+
+    @Override
+    protected boolean canPlantOnTop(int id) {
+        return treeType.feature.getSoils().stream().anyMatch(b -> b.id == id);
+    }
 }

@@ -1,5 +1,6 @@
 package net.glasslauncher.mods.landscaped.eventlisteners.init;
 
+import net.glasslauncher.mods.landscaped.worldgen.LandscapedTreeFeature;
 import net.glasslauncher.mods.landscaped.worldgen.TreeType;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.mine_diver.unsafeevents.listener.ListenerPriority;
@@ -11,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class TreeGenerationInit {
-    public static final HashMap<String, List<Feature>> BIOME_TO_TREES = new HashMap<>();
+    public static final HashMap<String, List<LandscapedTreeFeature>> BIOME_TO_TREES = new HashMap<>();
 
     @EventListener(priority = ListenerPriority.LOW)
     public static void init(BiomeRegisterEvent event) {

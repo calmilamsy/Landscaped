@@ -1,19 +1,19 @@
 package net.glasslauncher.mods.landscaped.worldgen;
 
-import com.google.common.collect.ImmutableList;
 import net.glasslauncher.mods.landscaped.blocks.LandscapedBlocks;
 import net.glasslauncher.mods.landscaped.blocks.LandscapedLeavesBlock;
 import net.glasslauncher.mods.landscaped.blocks.LandscapedLogBlock;
 import net.glasslauncher.mods.landscaped.blocks.LandscapedSaplingBlock;
+import net.minecraft.block.Block;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.feature.Feature;
 
 import java.util.List;
+import java.util.Map;
 
 public enum TreeType {
     ACACIA(LandscapedBlocks.Wood.acacia, LandscapedBlocks.Leaves.acacia, LandscapedBlocks.Sapling.acacia, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 5, (random, layer) -> layer == 0 ? 1 : -layer * 2, r -> 2), () -> List.of(Biome.SAVANNA)),
     BALSA(LandscapedBlocks.Wood.balsa, LandscapedBlocks.Leaves.balsa, LandscapedBlocks.Sapling.balsa, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(2) + 7, (random, layer) -> layer == 0 ? 1 : -(int) Math.floor(layer * 1.5D), r -> 2), () -> List.of(Biome.RAINFOREST)),
-    BAOBAB(LandscapedBlocks.Wood.baobab, LandscapedBlocks.Leaves.baobab, LandscapedBlocks.Sapling.baobab, (t, l) -> new ThickOakGen(t, l, r -> r.nextInt(2) + 8, (random, layer) -> layer == 0 ? 1 : -layer + 1, r -> 2, r -> 8 + r.nextInt(1)), () -> List.of(Biome.SAVANNA)),
+    BAOBAB(LandscapedBlocks.Wood.baobab, LandscapedBlocks.Leaves.baobab, LandscapedBlocks.Sapling.baobab, (t, l) -> new ThickOakGen(t, l, r -> r.nextInt(2) + 8, (random, layer) -> layer == 0 ? 1 : -layer + 1, r -> 2, r -> 8 + r.nextInt(1), Map.of(Block.SAND, (w, r, x, y , z) -> {})), () -> List.of(Biome.SAVANNA)),
     CHERRY(LandscapedBlocks.Wood.cherry, LandscapedBlocks.Leaves.cherry, LandscapedBlocks.Sapling.cherry, (t, l) -> new CherryGen(t, l, r -> r.nextInt(3) + 5, (random, layer) -> layer == 0 ? 1 : -(int) Math.floor(layer * 1.5D), r -> 2, r -> r.nextInt(3) + 1, r -> r.nextInt(3), (r, treeHeight) -> treeHeight - 2 - r.nextInt(2)), () -> List.of(Biome.FOREST)),
     CHESTNUT(LandscapedBlocks.Wood.chestnut, LandscapedBlocks.Leaves.chestnut, LandscapedBlocks.Sapling.chestnut, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 4, (random, layer) -> 1 - layer / 2, r -> 3), () -> List.of(Biome.FOREST)),
     CITRUS(LandscapedBlocks.Wood.citrus, LandscapedBlocks.Leaves.citrus, LandscapedBlocks.Sapling.citrus, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 5, (random, layer) -> layer == 0 ? 1 : -(int) Math.floor(layer / 2D), r -> 4), () -> List.of(Biome.SEASONAL_FOREST)),
@@ -22,8 +22,7 @@ public enum TreeType {
     GIGANTEUM(LandscapedBlocks.Wood.giganteum, LandscapedBlocks.Leaves.giganteum, LandscapedBlocks.Sapling.giganteum, (t, l) -> new ThickOakGen(t, l, r -> r.nextInt(8) + 20, (random, layer) -> layer == 0 ? 2 : 2 + random.nextInt(2), r -> r.nextInt(2) + 6, r -> 19 + r.nextInt(2)), () -> List.of(Biome.FOREST)),
     GREENHEART(LandscapedBlocks.Wood.greenheart, LandscapedBlocks.Leaves.greenheart, LandscapedBlocks.Sapling.greenheart, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 4, (random, layer) -> 1 - layer / 2, r -> 3), () -> List.of(Biome.RAINFOREST, Biome.SEASONAL_FOREST)),
     IPE(LandscapedBlocks.Wood.ipe, LandscapedBlocks.Leaves.ipe, LandscapedBlocks.Sapling.ipe, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 6, (random, layer) -> 2 -layer / 2, r -> 3), () -> List.of(Biome.RAINFOREST)),
-    IRONWOOD(LandscapedBlocks.Wood.ironwood, LandscapedBlocks.Leaves.ironwood, LandscapedBlocks.Sapling.ironwood, (t, l) -> new CherryGen(t, l, r -> r.nextInt(3) + 3, (random, layer) -> 2 -layer / 2, r -> 3, r -> r.nextInt(4) + 2, r -> r.nextInt(2) + 1, (r, treeHeight) -> treeHeight > 0 ? treeHeight - 1 - r.nextInt(treeHeight / 4) : treeHeight - 1), () -> List.of(Biome.DESERT)),
-    //REDWOOD(LandscapedBlocks.Wood.redwood, LandscapedBlocks.Leaves., (LandscapedBlocksSaplingWood.redwood (t, l) -> new ConifersGen(t, l, r -> 20 + r.nextInt(8), r -> 2, r -> r.nextInt(2) + 2, r -> r.nextInt(3), r -> 2, r -> 0, r -> 1, r > () -> 1), List.of(Biome.FOREST)),
+    IRONWOOD(LandscapedBlocks.Wood.ironwood, LandscapedBlocks.Leaves.ironwood, LandscapedBlocks.Sapling.ironwood, (t, l) -> new CherryGen(t, l, r -> r.nextInt(3) + 3, (random, layer) -> 2 -layer / 2, r -> 3, r -> r.nextInt(4) + 2, r -> r.nextInt(2) + 1, (r, treeHeight) -> treeHeight > 0 ? treeHeight - 1 - r.nextInt(treeHeight / 4) : treeHeight - 1, Map.of(Block.SAND, (w, r, x, y , z) -> {})), () -> List.of(Biome.DESERT)),
     KAPOK(LandscapedBlocks.Wood.kapok, LandscapedBlocks.Leaves.kapok, LandscapedBlocks.Sapling.kapok, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(2) + 8, (random, layer) -> layer == 0 ? 1 : -layer + 1, r -> 2), () -> List.of(Biome.RAINFOREST)),
     LARCH(LandscapedBlocks.Wood.larch, LandscapedBlocks.Leaves.larch, LandscapedBlocks.Sapling.larch, (t, l) -> new ConifersGen(t, l, r -> 6 + r.nextInt(2), r -> 2, r -> r.nextInt(2) + 1, r -> r.nextInt(3), r -> 0, r -> 0, r -> 1, r -> 1), () -> List.of(Biome.TAIGA)),
     LIME(LandscapedBlocks.Wood.lime, LandscapedBlocks.Leaves.lime, LandscapedBlocks.Sapling.lime, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 5, (random, layer) -> layer == 0 ? 1 : -(int) Math.floor(layer / 2D), r -> 4), () -> List.of(Biome.RAINFOREST)),
@@ -31,7 +30,7 @@ public enum TreeType {
     MAHOGANY(LandscapedBlocks.Wood.mahogany, LandscapedBlocks.Leaves.mahogany, LandscapedBlocks.Sapling.mahogany, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 6, (random, layer) -> 2 -layer / 2, r -> 3), () -> List.of(Biome.RAINFOREST, Biome.SEASONAL_FOREST)),
     MAPLE(LandscapedBlocks.Wood.maple, LandscapedBlocks.Leaves.maple, LandscapedBlocks.Sapling.maple, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 5, (random, layer) -> 2 -layer / 2, r -> 3), () -> List.of(Biome.FOREST, Biome.PLAINS)),
     PADAUK(LandscapedBlocks.Wood.padauk, LandscapedBlocks.Leaves.padauk, LandscapedBlocks.Sapling.padauk, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 5, (random, layer) -> 2 -layer / 2, r -> 3), () -> List.of(Biome.RAINFOREST)),
-    PALM(LandscapedBlocks.Wood.palm, LandscapedBlocks.Leaves.palm, LandscapedBlocks.Sapling.palm, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 5, (random, layer) -> 3 + layer, r -> 2), () -> List.of(Biome.DESERT)),
+    PALM(LandscapedBlocks.Wood.palm, LandscapedBlocks.Leaves.palm, LandscapedBlocks.Sapling.palm, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 5, (random, layer) -> 3 + layer, r -> 2, Map.of(Block.SAND, (w, r, x, y , z) -> {})), () -> List.of(Biome.DESERT)),
     PAPAYA(LandscapedBlocks.Wood.papaya, LandscapedBlocks.Leaves.papaya, LandscapedBlocks.Sapling.papaya, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 5, (random, layer) -> layer == 0 ? 1 : layer == -1 ? 2 : 1, r -> 2), () -> List.of(Biome.RAINFOREST)),
     PINE(LandscapedBlocks.Wood.pine, LandscapedBlocks.Leaves.pine, LandscapedBlocks.Sapling.pine, (t, l) -> new ConifersGen(t, l, r -> 6 + r.nextInt(2), r -> 2, r -> r.nextInt(2) + 1, r -> r.nextInt(3), r -> 0, r -> 0, r -> 1, r -> 1), () -> List.of(Biome.TAIGA)),
     PLUM(LandscapedBlocks.Wood.plum, LandscapedBlocks.Leaves.plum, LandscapedBlocks.Sapling.plum, (t, l) -> new AlternateOakGen(t, l, r -> r.nextInt(3) + 4, (random, layer) -> 1 - layer / 2, r -> 3), () -> List.of(Biome.SWAMPLAND)),
@@ -47,15 +46,10 @@ public enum TreeType {
     public final LandscapedLogBlock trunk;
     public final LandscapedLeavesBlock leaves;
     public final LandscapedSaplingBlock sapling;
-    public final BiomeProvider biomeProvider;
-    public final Feature feature;
+    public final LazyBiomeProvider biomeProvider;
+    public final LandscapedTreeFeature feature;
 
-    @FunctionalInterface
-    public interface BiomeProvider {
-        List<Biome> getBiomes();
-    }
-
-    TreeType(LandscapedLogBlock trunk, LandscapedLeavesBlock leaves, LandscapedSaplingBlock sapling, TreeFeatureProvider treeFeatureProvider, BiomeProvider biomes) {
+    TreeType(LandscapedLogBlock trunk, LandscapedLeavesBlock leaves, LandscapedSaplingBlock sapling, LazyTreeFeatureProvider treeFeatureProvider, LazyBiomeProvider biomes) {
         this.trunk = trunk;
         this.leaves = leaves;
         this.sapling = sapling;
@@ -63,7 +57,13 @@ public enum TreeType {
         feature = treeFeatureProvider.provide(trunk, leaves);
     }
 
-    public interface TreeFeatureProvider {
-        Feature provide(LandscapedLogBlock t, LandscapedLeavesBlock l);
+    @FunctionalInterface
+    public interface LazyBiomeProvider {
+        List<Biome> getBiomes();
+    }
+
+    @FunctionalInterface
+    public interface LazyTreeFeatureProvider {
+        LandscapedTreeFeature provide(LandscapedLogBlock t, LandscapedLeavesBlock l);
     }
 }

@@ -1,21 +1,21 @@
 package net.glasslauncher.mods.landscaped.worldgen;
 
 import lombok.RequiredArgsConstructor;
-import net.glasslauncher.mods.landscaped.blocks.LeavesBlockTemplate;
 import net.glasslauncher.mods.landscaped.util.RandomIntProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.Feature;
 import net.modificationstation.stationapi.api.registry.BlockRegistry;
-import net.modificationstation.stationapi.api.util.math.Direction;
 import net.modificationstation.stationapi.api.util.math.Vec3i;
 
 import java.util.*;
 import java.util.function.BiFunction;
 
+import static net.glasslauncher.mods.landscaped.worldgen.TreeGenHelpers.DEFAULT_SOILS;
+
 @RequiredArgsConstructor
-public class CherryGen extends Feature {
+public class CherryGen extends Feature implements LandscapedTreeFeature {
     protected final Block trunk;
     protected final Block leaves;
     protected final RandomIntProvider treeHeightGetter; // random.nextInt(3) + 4
@@ -35,7 +35,7 @@ public class CherryGen extends Feature {
         this.branchCountGetter = branchCountGetter;
         this.branchLengthGetter = branchLengthGetter;
         this.branchHeightGetter = branchHeightGetter;
-        soils = Map.of(Block.DIRT, (w, r, x, y, z) -> {}, Block.GRASS_BLOCK, (w, r, x, y, z) -> w.setBlockWithoutNotifyingNeighbors(x, y, z, Block.DIRT.id));
+        soils = DEFAULT_SOILS;
     }
 
     @Override
@@ -46,7 +46,8 @@ public class CherryGen extends Feature {
         }
 
         int supportingBlockId = world.getBlockId(x, y - 1, z);
-        if (!(supportingBlockId == Block.GRASS_BLOCK.id || supportingBlockId == Block.DIRT.id) || y >= world.getTopY() - treeHeight - 1) {
+        CustomSoilPlacer soilPlacer = soils.get(BlockRegistry.INSTANCE.getOrThrow(supportingBlockId));
+        if (soilPlacer == null || y >= world.getTopY() - treeHeight - 1) {
             return false;
         }
 
@@ -61,7 +62,7 @@ public class CherryGen extends Feature {
             }
         }
 
-        world.setBlockWithoutNotifyingNeighbors(x, y - 1, z, Block.DIRT.id);
+        soilPlacer.placeSoil(world, random, x, y, z);
 
         for(int relativeY = 0; relativeY < treeHeight; ++relativeY) {
             if (TreeGenHelpers.isReplaceableByLogs(world.getBlockState(x, y + relativeY, z))) {
@@ -124,5 +125,10 @@ public class CherryGen extends Feature {
         }
 
         TreeGenHelpers.updateGeneratedLeaves(world, x, y, z);
+    }
+
+    @Override
+    public Set<Block> getSoils() {
+        return soils.keySet();
     }
 }
