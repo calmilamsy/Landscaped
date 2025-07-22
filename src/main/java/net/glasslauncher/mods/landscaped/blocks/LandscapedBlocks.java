@@ -13,6 +13,7 @@ public class LandscapedBlocks {
         public static LandscapedLogBlock giganteum;
         public static LandscapedLogBlock greenheart;
         public static LandscapedLogBlock ipe;
+        public static LandscapedLogBlock ironwood;
         public static LandscapedLogBlock kapok;
         public static LandscapedLogBlock larch;
         public static LandscapedLogBlock lime;
@@ -45,6 +46,7 @@ public class LandscapedBlocks {
         public static LandscapedLeavesBlock giganteum;
         public static LandscapedLeavesBlock greenheart;
         public static LandscapedLeavesBlock ipe;
+        public static LandscapedLeavesBlock ironwood;
         public static LandscapedLeavesBlock kapok;
         public static LandscapedLeavesBlock larch;
         public static LandscapedLeavesBlock lime;
@@ -77,6 +79,7 @@ public class LandscapedBlocks {
         public static LandscapedPlanksBlock giganteum;
         public static LandscapedPlanksBlock greenheart;
         public static LandscapedPlanksBlock ipe;
+        public static LandscapedPlanksBlock ironwood;
         public static LandscapedPlanksBlock kapok;
         public static LandscapedPlanksBlock larch;
         public static LandscapedPlanksBlock lime;
@@ -109,6 +112,7 @@ public class LandscapedBlocks {
         public static LandscapedSaplingBlock giganteum;
         public static LandscapedSaplingBlock greenheart;
         public static LandscapedSaplingBlock ipe;
+        public static LandscapedSaplingBlock ironwood;
         public static LandscapedSaplingBlock kapok;
         public static LandscapedSaplingBlock larch;
         public static LandscapedSaplingBlock lime;

@@ -20,6 +20,7 @@ public class SaplingInit {
         LandscapedBlocks.Sapling.giganteum.setTreeType(TreeType.GIGANTEUM);
         LandscapedBlocks.Sapling.greenheart.setTreeType(TreeType.GREENHEART);
         LandscapedBlocks.Sapling.ipe.setTreeType(TreeType.IPE);
+        LandscapedBlocks.Sapling.ironwood.setTreeType(TreeType.IRONWOOD);
         LandscapedBlocks.Sapling.kapok.setTreeType(TreeType.KAPOK);
         LandscapedBlocks.Sapling.larch.setTreeType(TreeType.LARCH);
         LandscapedBlocks.Sapling.lime.setTreeType(TreeType.LIME);

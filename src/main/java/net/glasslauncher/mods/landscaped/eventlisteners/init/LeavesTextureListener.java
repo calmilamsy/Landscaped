@@ -45,6 +45,7 @@ public class LeavesTextureListener {
         LandscapedBlocks.Leaves.giganteum.textureId = conifers;
         LandscapedBlocks.Leaves.greenheart.textureId = deciduous;
         LandscapedBlocks.Leaves.ipe.textureId = jungle;
+        LandscapedBlocks.Leaves.ironwood.textureId = conifers;
         LandscapedBlocks.Leaves.kapok.textureId = jungle;
         LandscapedBlocks.Leaves.larch.textureId = conifers;
         LandscapedBlocks.Leaves.lime.textureId = deciduous;
@@ -75,6 +76,7 @@ public class LeavesTextureListener {
         LandscapedBlocks.Leaves.giganteum.fastTextureId = fastConifers;
         LandscapedBlocks.Leaves.greenheart.fastTextureId = fastDeciduous;
         LandscapedBlocks.Leaves.ipe.fastTextureId = fastJungle;
+        LandscapedBlocks.Leaves.ironwood.fastTextureId = fastConifers;
         LandscapedBlocks.Leaves.kapok.fastTextureId = fastJungle;
         LandscapedBlocks.Leaves.larch.fastTextureId = fastConifers;
         LandscapedBlocks.Leaves.lime.fastTextureId = fastDeciduous;
@@ -105,6 +107,7 @@ public class LeavesTextureListener {
         LandscapedBlocks.Sapling.giganteum.textureId = terrain.addTexture(NAMESPACE.id("block/sapling/giganteum")).index;
         LandscapedBlocks.Sapling.greenheart.textureId = terrain.addTexture(NAMESPACE.id("block/sapling/greenheart")).index;
         LandscapedBlocks.Sapling.ipe.textureId = terrain.addTexture(NAMESPACE.id("block/sapling/ipe")).index;
+        LandscapedBlocks.Sapling.ironwood.textureId = terrain.addTexture(NAMESPACE.id("block/sapling/ironwood")).index;
         LandscapedBlocks.Sapling.kapok.textureId = terrain.addTexture(NAMESPACE.id("block/sapling/kapok")).index;
         LandscapedBlocks.Sapling.larch.textureId = terrain.addTexture(NAMESPACE.id("block/sapling/larch")).index;
         LandscapedBlocks.Sapling.lime.textureId = terrain.addTexture(NAMESPACE.id("block/sapling/lime")).index;

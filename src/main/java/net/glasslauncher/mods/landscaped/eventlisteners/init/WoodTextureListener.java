@@ -31,6 +31,7 @@ public class WoodTextureListener {
         LandscapedBlocks.Wood.giganteum.setTextures(terrain.addTexture(NAMESPACE.id("block/wood/heart/giganteum")).index, terrain.addTexture(NAMESPACE.id("block/wood/bark/giganteum")).index);
         LandscapedBlocks.Wood.greenheart.setTextures(terrain.addTexture(NAMESPACE.id("block/wood/heart/greenheart")).index, terrain.addTexture(NAMESPACE.id("block/wood/bark/greenheart")).index);
         LandscapedBlocks.Wood.ipe.setTextures(terrain.addTexture(NAMESPACE.id("block/wood/heart/ipe")).index, terrain.addTexture(NAMESPACE.id("block/wood/bark/ipe")).index);
+        LandscapedBlocks.Wood.ironwood.setTextures(terrain.addTexture(NAMESPACE.id("block/wood/heart/ironwood")).index, terrain.addTexture(NAMESPACE.id("block/wood/bark/ironwood")).index);
         LandscapedBlocks.Wood.kapok.setTextures(terrain.addTexture(NAMESPACE.id("block/wood/heart/kapok")).index, terrain.addTexture(NAMESPACE.id("block/wood/bark/kapok")).index);
         LandscapedBlocks.Wood.larch.setTextures(terrain.addTexture(NAMESPACE.id("block/wood/heart/larch")).index, terrain.addTexture(NAMESPACE.id("block/wood/bark/larch")).index);
         LandscapedBlocks.Wood.lime.setTextures(terrain.addTexture(NAMESPACE.id("block/wood/heart/lime")).index, terrain.addTexture(NAMESPACE.id("block/wood/bark/lime")).index);
@@ -61,6 +62,7 @@ public class WoodTextureListener {
         LandscapedBlocks.Planks.giganteum.textureId = terrain.addTexture(NAMESPACE.id("block/wood/planks/giganteum")).index;
         LandscapedBlocks.Planks.greenheart.textureId = terrain.addTexture(NAMESPACE.id("block/wood/planks/greenheart")).index;
         LandscapedBlocks.Planks.ipe.textureId = terrain.addTexture(NAMESPACE.id("block/wood/planks/ipe")).index;
+        LandscapedBlocks.Planks.ironwood.textureId = terrain.addTexture(NAMESPACE.id("block/wood/planks/ironwood")).index;
         LandscapedBlocks.Planks.kapok.textureId = terrain.addTexture(NAMESPACE.id("block/wood/planks/kapok")).index;
         LandscapedBlocks.Planks.larch.textureId = terrain.addTexture(NAMESPACE.id("block/wood/planks/larch")).index;
         LandscapedBlocks.Planks.lime.textureId = terrain.addTexture(NAMESPACE.id("block/wood/planks/lime")).index;

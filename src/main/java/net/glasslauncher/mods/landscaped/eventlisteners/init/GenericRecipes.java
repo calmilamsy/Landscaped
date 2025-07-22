@@ -26,6 +26,7 @@ public class GenericRecipes {
             CraftingRegistry.addShapelessRecipe(new ItemStack(LandscapedBlocks.Planks.giganteum, 4), LandscapedBlocks.Wood.giganteum);
             CraftingRegistry.addShapelessRecipe(new ItemStack(LandscapedBlocks.Planks.greenheart, 4), LandscapedBlocks.Wood.greenheart);
             CraftingRegistry.addShapelessRecipe(new ItemStack(LandscapedBlocks.Planks.ipe, 4), LandscapedBlocks.Wood.ipe);
+            CraftingRegistry.addShapelessRecipe(new ItemStack(LandscapedBlocks.Planks.ironwood, 4), LandscapedBlocks.Wood.ironwood);
             CraftingRegistry.addShapelessRecipe(new ItemStack(LandscapedBlocks.Planks.kapok, 4), LandscapedBlocks.Wood.kapok);
             CraftingRegistry.addShapelessRecipe(new ItemStack(LandscapedBlocks.Planks.larch, 4), LandscapedBlocks.Wood.larch);
             CraftingRegistry.addShapelessRecipe(new ItemStack(LandscapedBlocks.Planks.lime, 4), LandscapedBlocks.Wood.lime);

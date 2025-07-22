@@ -29,6 +29,7 @@ public class BlockInit {
         LandscapedBlocks.Wood.giganteum = new LandscapedLogBlock(NAMESPACE.id("giganteum_log"));
         LandscapedBlocks.Wood.greenheart = new LandscapedLogBlock(NAMESPACE.id("greenheart_log"));
         LandscapedBlocks.Wood.ipe = new LandscapedLogBlock(NAMESPACE.id("ipe_log"));
+        LandscapedBlocks.Wood.ironwood = new LandscapedLogBlock(NAMESPACE.id("ironwood_log"));
         LandscapedBlocks.Wood.kapok = new LandscapedLogBlock(NAMESPACE.id("kapok_log"));
         LandscapedBlocks.Wood.larch = new LandscapedLogBlock(NAMESPACE.id("larch_log"));
         LandscapedBlocks.Wood.lime = new LandscapedLogBlock(NAMESPACE.id("lime_log"));
@@ -51,7 +52,7 @@ public class BlockInit {
         LandscapedBlocks.Leaves.acacia = new LandscapedLeavesBlock(NAMESPACE.id("acacia_leaves"), new Color(0x748C1C), () -> TreeType.ACACIA);
         LandscapedBlocks.Leaves.balsa = new LandscapedLeavesBlock(NAMESPACE.id("balsa_leaves"), new Color(0x59ac00), () -> TreeType.BALSA);
         LandscapedBlocks.Leaves.baobab = new LandscapedLeavesBlock(NAMESPACE.id("baobab_leaves"), new Color(0xfeff8f), () -> TreeType.BAOBAB);
-        LandscapedBlocks.Leaves.cherry = new LandscapedLeavesBlock(NAMESPACE.id("cherry_leaves"), new Color(0xe691da), () -> TreeType.CHERRY);
+        LandscapedBlocks.Leaves.cherry = new LandscapedLeavesBlock(NAMESPACE.id("cherry_leaves"), new Color(0xFF8EE8), () -> TreeType.CHERRY);
         LandscapedBlocks.Leaves.chestnut = new LandscapedLeavesBlock(NAMESPACE.id("chestnut_leaves"), new Color(0x5ea107), () -> TreeType.CHESTNUT);
         LandscapedBlocks.Leaves.citrus = new LandscapedLeavesBlock(NAMESPACE.id("citrus_leaves"), new Color(0x88af54), () -> TreeType.CITRUS);
         LandscapedBlocks.Leaves.cocobolo = new LandscapedLeavesBlock(NAMESPACE.id("cocobolo_leaves"), new Color(0x6aa17a), () -> TreeType.COCOBOLO);
@@ -59,6 +60,7 @@ public class BlockInit {
         LandscapedBlocks.Leaves.giganteum = new LandscapedLeavesBlock(NAMESPACE.id("giganteum_leaves"), new Color(0x738434), () -> TreeType.GIGANTEUM);
         LandscapedBlocks.Leaves.greenheart = new LandscapedLeavesBlock(NAMESPACE.id("greenheart_leaves"), new Color(0x678911), () -> TreeType.GREENHEART);
         LandscapedBlocks.Leaves.ipe = new LandscapedLeavesBlock(NAMESPACE.id("ipe_leaves"), new Color(0xfdd207), () -> TreeType.IPE);
+        LandscapedBlocks.Leaves.ironwood = new LandscapedLeavesBlock(NAMESPACE.id("ironwood_leaves"), new Color(0xe691da), () -> TreeType.IRONWOOD);
         LandscapedBlocks.Leaves.kapok = new LandscapedLeavesBlock(NAMESPACE.id("kapok_leaves"), new Color(0x89987b), () -> TreeType.KAPOK);
         LandscapedBlocks.Leaves.larch = new LandscapedLeavesBlock(NAMESPACE.id("larch_leaves"), new Color(0x698f90), () -> TreeType.LARCH);
         LandscapedBlocks.Leaves.lime = new LandscapedLeavesBlock(NAMESPACE.id("lime_leaves"), new Color(0x5ea107), () -> TreeType.LIME);
@@ -89,6 +91,7 @@ public class BlockInit {
         LandscapedBlocks.Planks.giganteum = new LandscapedPlanksBlock(NAMESPACE.id("giganteum_planks"));
         LandscapedBlocks.Planks.greenheart = new LandscapedPlanksBlock(NAMESPACE.id("greenheart_planks"));
         LandscapedBlocks.Planks.ipe = new LandscapedPlanksBlock(NAMESPACE.id("ipe_planks"));
+        LandscapedBlocks.Planks.ironwood = new LandscapedPlanksBlock(NAMESPACE.id("ironwood_planks"));
         LandscapedBlocks.Planks.kapok = new LandscapedPlanksBlock(NAMESPACE.id("kapok_planks"));
         LandscapedBlocks.Planks.larch = new LandscapedPlanksBlock(NAMESPACE.id("larch_planks"));
         LandscapedBlocks.Planks.lime = new LandscapedPlanksBlock(NAMESPACE.id("lime_planks"));
@@ -119,6 +122,7 @@ public class BlockInit {
         LandscapedBlocks.Sapling.giganteum = new LandscapedSaplingBlock(NAMESPACE.id("giganteum_sapling"));
         LandscapedBlocks.Sapling.greenheart = new LandscapedSaplingBlock(NAMESPACE.id("greenheart_sapling"));
         LandscapedBlocks.Sapling.ipe = new LandscapedSaplingBlock(NAMESPACE.id("ipe_sapling"));
+        LandscapedBlocks.Sapling.ironwood = new LandscapedSaplingBlock(NAMESPACE.id("ironwood_sapling"));
         LandscapedBlocks.Sapling.kapok = new LandscapedSaplingBlock(NAMESPACE.id("kapok_sapling"));
         LandscapedBlocks.Sapling.larch = new LandscapedSaplingBlock(NAMESPACE.id("larch_sapling"));
         LandscapedBlocks.Sapling.lime = new LandscapedSaplingBlock(NAMESPACE.id("lime_sapling"));
