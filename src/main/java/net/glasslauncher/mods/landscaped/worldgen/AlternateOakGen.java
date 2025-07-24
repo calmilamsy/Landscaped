@@ -58,7 +58,7 @@ public class AlternateOakGen extends Feature implements LandscapedTreeFeature {
             }
         }
 
-        soilPlacer.placeSoil(world, random, x, y, z);
+        soilPlacer.placeSoil(world, random, x, y - 1, z);
 
         for(int relativeY = 0; relativeY < treeHeight; ++relativeY) {
             if (TreeGenHelpers.isReplaceableByLogs(world.getBlockState(x, y + relativeY, z))) {

@@ -18,7 +18,7 @@ public class WoodTextureListener {
 
     @EventListener
     private static void init(TextureRegisterEvent event) {
-        ExpandableAtlas terrain = Atlases.getStationTerrain();
+        ExpandableAtlas terrain = Atlases.getTerrain();
 
         LandscapedBlocks.Wood.acacia.setTextures(terrain.addTexture(NAMESPACE.id("block/wood/heart/acacia")).index, terrain.addTexture(NAMESPACE.id("block/wood/bark/acacia")).index);
         LandscapedBlocks.Wood.balsa.setTextures(terrain.addTexture(NAMESPACE.id("block/wood/heart/balsa")).index, terrain.addTexture(NAMESPACE.id("block/wood/bark/balsa")).index);

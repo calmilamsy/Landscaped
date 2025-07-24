@@ -60,7 +60,7 @@ public class ThickOakGen extends Feature implements LandscapedTreeFeature {
             }
         }
 
-        soilPlacer.placeSoil(world, random, x, y, z);
+        soilPlacer.placeSoil(world, random, x, y - 1, z);
 
         placeLogs(world, x, y, z, treeHeight);
         placeLogs(world, x - 1, y, z, stumpHeight.provide(random));

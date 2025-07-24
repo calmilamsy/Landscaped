@@ -70,7 +70,7 @@ public class ConifersGen extends Feature implements LandscapedTreeFeature {
             }
         }
 
-        soilPlacer.placeSoil(world, random, x, y, z);
+        soilPlacer.placeSoil(world, random, x, y - 1, z);
         // Starts at the top, so this decides the top leaf radius, which can be 1 or 0, which gives + type leaves or a spike, respectively.
         int currentLeafRadius = topLeafRadiusGetter.provide(random);
         // Leaves can't get any thinner than this unless it's just after the top and is also a spike. Logs are excluded in this.
