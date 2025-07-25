@@ -20,7 +20,7 @@ public class TreeRegistryEntry {
     public TreeRegistryEntry(Feature feature, List<Biome> validBiomes) {
         this.feature = feature;
         this.validBiomes = new Object2IntOpenHashMap<>();
-        validBiomes.forEach(e -> this.validBiomes.put(e, 10));
+        validBiomes.forEach(e -> this.validBiomes.put(e, 100));
     }
 
     public TreeRegistryEntry(Feature feature, Map<Biome, Integer> validBiomes) {

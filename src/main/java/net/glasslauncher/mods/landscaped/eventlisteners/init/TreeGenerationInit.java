@@ -25,11 +25,11 @@ public class TreeGenerationInit {
 
     @EventListener
     public static void vanillaInit(TreeRegisterEvent event) {
-        Registry.register(TreeRegistry.INSTANCE, Namespace.MINECRAFT.id("oak"), new TreeRegistryEntry(new OakTreeFeature(), Map.of(Biome.FOREST, 1000)));
-        Registry.register(TreeRegistry.INSTANCE, Namespace.MINECRAFT.id("big_oak"), new TreeRegistryEntry(new LargeOakTreeFeature(), Map.of(Biome.FOREST, 100)));
+        Registry.register(TreeRegistry.INSTANCE, Namespace.MINECRAFT.id("oak"), new TreeRegistryEntry(new OakTreeFeature(), Map.of(Biome.FOREST, 1000, Biome.RAINFOREST, 1000, Biome.SAVANNA, 1000, Biome.SWAMPLAND, 1000, Biome.SEASONAL_FOREST, 1000, Biome.SHRUBLAND, 1000)));
+        Registry.register(TreeRegistry.INSTANCE, Namespace.MINECRAFT.id("big_oak"), new TreeRegistryEntry(new LargeOakTreeFeature(), Map.of(Biome.FOREST, 1000, Biome.RAINFOREST, 1000, Biome.SAVANNA, 100, Biome.SWAMPLAND, 100, Biome.SEASONAL_FOREST, 100, Biome.SHRUBLAND, 100)));
         Registry.register(TreeRegistry.INSTANCE, Namespace.MINECRAFT.id("spruce"), new TreeRegistryEntry(new SpruceTreeFeature(), Map.of(Biome.TAIGA, 1000)));
         Registry.register(TreeRegistry.INSTANCE, Namespace.MINECRAFT.id("pine"), new TreeRegistryEntry(new PineTreeFeature(), Map.of(Biome.TAIGA, 1000)));
-        Registry.register(TreeRegistry.INSTANCE, Namespace.MINECRAFT.id("birch"), new TreeRegistryEntry(new BirchTreeFeature(), Map.of(Biome.FOREST, 1000)));
+        Registry.register(TreeRegistry.INSTANCE, Namespace.MINECRAFT.id("birch"), new TreeRegistryEntry(new BirchTreeFeature(), Map.of(Biome.FOREST, 500)));
     }
 
     @EventListener

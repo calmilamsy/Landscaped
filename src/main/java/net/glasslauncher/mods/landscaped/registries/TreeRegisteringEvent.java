@@ -6,4 +6,9 @@ import net.mine_diver.unsafeevents.Event;
 @RequiredArgsConstructor
 public class TreeRegisteringEvent extends Event {
     public final TreeRegistryEntry tree;
+
+    @Override
+    public boolean isCancelable() {
+        return true;
+    }
 }
