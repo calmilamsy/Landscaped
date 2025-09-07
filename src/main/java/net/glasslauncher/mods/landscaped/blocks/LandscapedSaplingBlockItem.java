@@ -6,7 +6,6 @@ import net.modificationstation.stationapi.api.template.item.TemplateSaplingBlock
 public class LandscapedSaplingBlockItem extends TemplateSaplingBlockItem {
     public LandscapedSaplingBlockItem(int i) {
         super(i);
-        setTranslationKey(BlockRegistry.INSTANCE.getId(getBlock()));
     }
 
     @Override
