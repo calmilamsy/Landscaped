@@ -18,7 +18,7 @@ public class LeavesTextureListener {
 
     @EventListener
     private static void init(TextureRegisterEvent event) {
-        ExpandableAtlas terrain = Atlases.getStationTerrain();
+        ExpandableAtlas terrain = Atlases.getTerrain();
 
         int conifers = terrain.addTexture(NAMESPACE.id("block/leaves/conifers.fancy")).index;
         int deciduous = terrain.addTexture(NAMESPACE.id("block/leaves/deciduous.fancy")).index;
