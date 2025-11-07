@@ -93,7 +93,7 @@ public class LeavesBlockTemplate extends TemplateBlock {
             world.setBlockState(x, y, z, state.with(DISTANCE, distance));
             for (Direction side : Direction.values()) {
                 if (world.getBlockState(x + side.getOffsetX(), y + side.getOffsetY(), z + side.getOffsetZ()).contains(DISTANCE)) {
-                    updateDecay(world, x + side.getOffsetX(), y + side.getOffsetY(), z + side.getOffsetZ(), decay);
+                    updateDecay(world, x + side.getOffsetX(), y + side.getOffsetY(), z + side.getOffsetZ(), false);
                 }
             }
         }
@@ -154,3 +154,4 @@ public class LeavesBlockTemplate extends TemplateBlock {
 
 
 }
+
